@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<section>
+    <div class="upload_form container py-3">
+        
+
+
+        <form action="" my-2 method="POST" enctype="multipart/form-data"><h1 class="text-center">UPLOAD PROJECT </h1>
+            {% csrf_token %}
+
+
+
+            
+            <div class="form-group">
+                <label>Project Name</label>
+                <input type="text" name="pname" id="" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>DESCRIPTION</label>
+                <input type="text" name="desc" id="" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>USEED TECHNOLOGIES</label>
+                <input type="text" name="technologies" id="" class="form-control">
+            </div>
+            <div class="form-group">
+                <label>GITHUB URL</label>
+                <input type="text" name="url" id="" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">PROFILE</label>
+                <input type="file" class="form-control" name="profile" id="exampleFormControlFile1">
+              </div>
+              <button type="submit" class="btn btn-success my-3">upload</button>
+        </form>
+
+        
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <div class="form-group text-{{message.tags}}">
+                <p>{{message}}</p>
+            </div>
+            {% endfor %}
+            
+           </ul>
+     {% endif %}
+    </div>
+</section>
+
+
+
+<script>
+   
+</script>
+{% endblock body %}

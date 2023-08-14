@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+
+{% block body %}
+
+
+<section class="dark">
+    <div class="container p-4">
+        <h1 class="h1 " id="pageHeaderTitle">SEARCH POST :</h1>
+        {% for i in searchdata %}
+        <article class="postcard dark blue">
+            <a class="postcard__img_link" href="#">
+                <img class="postcard__img" height="300" width="300" src="/media/{{i.profile_picture}}" alt="Image Title" />
+            </a>
+            <div class="postcard__text">
+                <h1 class="postcard__title blue">{{i.pname}}</h1>
+                <div class="postcard__subtitle small">
+                    <time datetime="2020-05-25 12:00:00">
+                        <i class="fas fa-calendar-alt mr-2"></i>  {{i.upload_date}}
+                    </time>
+                </div>
+                <div class="postcard__bar"></div>
+                <div class="postcard__preview-txt">{{i.pdesc|truncatechars:255}}</div>
+                <ul class="postcard__tagbox">
+                    <li class="tag__item"><i class="fa-duotone fa-square-right"></i>view project</li>
+                    
+                </ul>
+            </div>
+        </article>
+        {% endfor %}
+    
+    </div>
+</section>
+
+
+
+
+{% endblock body %}
